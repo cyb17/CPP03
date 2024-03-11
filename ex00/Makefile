@@ -6,11 +6,11 @@
 #    By: yachen <yachen@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 14:21:49 by yachen            #+#    #+#              #
-#    Updated: 2024/03/11 11:38:11 by yachen           ###   ########.fr        #
+#    Updated: 2024/03/11 14:22:12 by yachen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Aaaaaand...OPEN!
+NAME = ClapTrap
 
 CC = c++
 
@@ -24,9 +24,9 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 		@echo "\e[32m\n==================================="
-		@echo "\e[32mCompiling Aaaaaand...OPEN!----------------"
+		@echo "\e[32mCompiling ClapTrap----------------"
 		@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-		@echo "\e[32m---created with success : Aaaaaand...OPEN!"
+		@echo "\e[32m---created with success : ClapTrap"
 		@echo "\e[32m===================================\n\e[0m"
 
 %.o: %.cpp
@@ -34,16 +34,16 @@ $(NAME): $(OBJ)
 
 clean:
 	@echo "\e[32m\n====================="
-	@echo "\e[32mCleaning Aaaaaand...OPEN!----"
+	@echo "\e[32mCleaning ClapTrap----"
 	@rm -rf $(OBJ)
-	@echo "\e[32m-----Aaaaaand...OPEN! Cleaned"
+	@echo "\e[32m-----ClapTrap Cleaned"
 	@echo "\e[32m=====================\n\e[0m"
 
 fclean:
 	@echo "\e[32m\n====================="
-	@echo "\e[32mCleaning Aaaaaand...OPEN!----"
+	@echo "\e[32mCleaning ClapTrap----"
 	@rm -rf $(OBJ)
-	@echo "\e[32m-----Aaaaaand...OPEN! Cleaned"
+	@echo "\e[32m-----ClapTrap Cleaned"
 	@rm -rf $(NAME)
 	@echo "\e[32m=====================\n\e[0m"
 

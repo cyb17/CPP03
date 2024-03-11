@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 10:14:48 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/11 18:52:16 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/11 18:58:27 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class	ClapTrap
 {
-	private:
+	protected:
 	
 		std::string		name;
 		unsigned int	hitPoints;
@@ -37,6 +37,7 @@ class	ClapTrap
 
 		unsigned int	getAttackDamage();
 		void			printTrapInfo();
+
 };
 
 #endif

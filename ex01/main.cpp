@@ -6,21 +6,26 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 11:30:47 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/11 11:56:49 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/11 18:58:27 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main( void )
 {
-	ClapTrap	Alice( "Alice" );
-	ClapTrap	Helene( "Helene" );
+	ScavTrap	Alice( "Alice" );
+	ScavTrap	Helene( "Helene" );
+	ScavTrap	copie( Alice );
 
+	copie.printTrapInfo();
 	Helene.beRepaired( 5 );
 	Alice.attack( "Helene" );
 	Helene.takeDamage( Alice.getAttackDamage() );
-	Alice.attack( "Helene" );
+	Alice.printTrapInfo();
+	Helene.printTrapInfo();
+	Alice.guardGate();
+	Helene.guardGate();
 	
 	return 0;
 }

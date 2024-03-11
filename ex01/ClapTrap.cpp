@@ -6,25 +6,26 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 10:21:54 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/11 12:08:19 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/11 18:55:52 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap(std::string nm ) : name(nm), hitPoints( 10 ), energyPoints( 10 ), attackDamage( 0 )
+ClapTrap::ClapTrap( std::string nm ) : name( nm ), hitPoints( 10 ), energyPoints( 10 ), attackDamage( 0 )
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap& other )
 {
+	std::cout << "ClapTrap constructor copie called" << std::endl;
 	*this = other;
 }
 
@@ -77,4 +78,14 @@ void	ClapTrap::beRepaired( unsigned int amount )
 unsigned int	ClapTrap::getAttackDamage()
 {
 	return this->attackDamage;
+}
+
+void	ClapTrap::printTrapInfo()
+{
+	std::cout << "\n";
+	std::cout << "Name : " << this->name << std::endl;
+	std::cout << "Hit points : " << this->hitPoints << std::endl;
+	std::cout << "Energy points : " << this->energyPoints << std::endl;
+	std::cout << "Attack damage : " << this->attackDamage << std::endl;
+	std::cout << "\n";
 }

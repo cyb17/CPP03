@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 11:30:47 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/11 18:55:49 by yachen           ###   ########.fr       */
+/*   Created: 2024/03/11 14:43:54 by yachen            #+#    #+#             */
+/*   Updated: 2024/03/11 17:50:10 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAG_TRAP_HPP
+# define FRAG_TRAP_HPP
+
 #include "ClapTrap.hpp"
+#include <string>
 
-int	main( void )
+class	FragTrap : public ClapTrap
 {
-	ClapTrap	Alice( "Alice" );
-	ClapTrap	Helene( "Helene" );
+	public:
+		
+		FragTrap( std::string nm );
+		~FragTrap();
+		FragTrap( const FragTrap& other );
+		FragTrap&	operator=( const FragTrap& other );
 
-	Helene.beRepaired( 5 );
-	Alice.attack( "Helene" );
-	Helene.takeDamage( Alice.getAttackDamage() );
-	Alice.printTrapInfo();
-	Helene.printTrapInfo();	
-	return 0;
-}
+		void	highFivesGuys( void );
+};
+
+#endif
