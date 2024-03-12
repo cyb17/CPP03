@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:42:55 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/12 10:53:31 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/12 10:54:07 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class	ScavTrap : public ClapTrap
 		~ScavTrap();
 		ScavTrap( const ScavTrap& other );
 		ScavTrap&	operator=( const ScavTrap& other );
-		
+
 		void	attack( const std::string& target )
 		void	guardGate();
 };

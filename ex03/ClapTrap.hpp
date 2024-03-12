@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 10:14:48 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/11 18:58:27 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/11 18:59:19 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ class	ClapTrap
 
 		unsigned int	getAttackDamage();
 		void			printTrapInfo();
-
 };
 
 #endif

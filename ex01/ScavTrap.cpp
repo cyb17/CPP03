@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:47:50 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/11 19:00:06 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/12 10:51:10 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,18 @@ ScavTrap&	ScavTrap::operator=( const ScavTrap& other)
 	this->energyPoints = other.energyPoints;
 	this->attackDamage = other.attackDamage;
 	return *this;
+}
+
+void	ScavTrap::attack( const std::string& target )
+{
+	if (this->hitPoints == 0 || this->energyPoints == 0)
+		std::cout << this->name << " is not alive or not have enough energy to attack ." << std::endl;
+	else
+	{ 
+		std::cout << "ScavTrap " << this->name << " attacks " << target;
+		std::cout << ", causing " << this->attackDamage << " points of damage !" << std::endl;
+		this->energyPoints--;
+	}
 }
 
 void	ScavTrap::guardGate()
