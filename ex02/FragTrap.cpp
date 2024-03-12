@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:47:16 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/12 16:37:36 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/12 19:19:38 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,13 @@ FragTrap::FragTrap( const FragTrap& other ) : ClapTrap( other )
 
 FragTrap&	FragTrap::operator=( const FragTrap& other)
 {
-	this->name = other.name;
-	this->hitPoints = other.hitPoints;
-	this->energyPoints = other.energyPoints;
-	this->attackDamage = other.attackDamage;
+	if (this != &other)
+	{
+		this->name = other.name;
+		this->hitPoints = other.hitPoints;
+		this->energyPoints = other.energyPoints;
+		this->attackDamage = other.attackDamage;
+	}
 	return *this;
 }
 

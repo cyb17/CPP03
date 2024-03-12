@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 10:21:54 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/12 16:41:44 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/12 19:20:17 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,13 @@ ClapTrap::ClapTrap( const ClapTrap& other )
 
 ClapTrap& ClapTrap::operator=( const ClapTrap& other )
 {
-	this->name = other.name;
-	this->hitPoints = other.hitPoints;
-	this->energyPoints = other.energyPoints;
-	this->attackDamage = other.attackDamage;
+	if (this != &other)
+	{
+		this->name = other.name;
+		this->hitPoints = other.hitPoints;
+		this->energyPoints = other.energyPoints;
+		this->attackDamage = other.attackDamage;
+	}
 	return *this;
 }
 

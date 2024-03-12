@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:47:50 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/12 16:42:13 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/12 19:21:06 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,13 @@ ScavTrap::ScavTrap( const ScavTrap& other ) : ClapTrap( other )
 
 ScavTrap&	ScavTrap::operator=( const ScavTrap& other)
 {
-	this->name = other.name;
-	this->hitPoints = other.hitPoints;
-	this->energyPoints = other.energyPoints;
-	this->attackDamage = other.attackDamage;
+	if (this != &other)
+	{
+		this->name = other.name;
+		this->hitPoints = other.hitPoints;
+		this->energyPoints = other.energyPoints;
+		this->attackDamage = other.attackDamage;
+	}
 	return *this;
 }
 

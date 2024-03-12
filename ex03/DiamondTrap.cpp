@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:32:05 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/12 16:43:04 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/12 19:20:41 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,13 @@ DiamondTrap::DiamondTrap( const DiamondTrap& other ) : ClapTrap( other ), ScavTr
 
 DiamondTrap&	DiamondTrap::operator=( const DiamondTrap& other )
 {
-	this->name = other.name;
-	this->hitPoints = other.hitPoints;
-	this->energyPoints = other.energyPoints;
-	this->attackDamage = other.attackDamage;	
+	if (this != &other)
+	{
+		this->name = other.name;
+		this->hitPoints = other.hitPoints;
+		this->energyPoints = other.energyPoints;
+		this->attackDamage = other.attackDamage;
+	}
 	return *this;
 }
 
