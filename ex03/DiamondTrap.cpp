@@ -6,20 +6,21 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:32:05 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/12 11:02:01 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/12 16:43:04 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
+#include <iostream>
 
 DiamondTrap::DiamondTrap( std::string nm ) : ClapTrap( nm + "_clap_name" ), ScavTrap( nm ), FragTrap( nm )
 {
 	std::cout << "DiamondTrap constructor called" << std::endl;
-	
+
 	this->name = ClapTrap::name;
-	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = ScavTrap::energyPoints;
-	this->attackDamage = FragTrap::attackDamage;
+	this->FragTrap::hitPoints = 100;
+	this->ScavTrap::energyPoints = 50;
+	this->FragTrap::attackDamage = 30;
 }
 
 DiamondTrap::~DiamondTrap()
@@ -27,13 +28,13 @@ DiamondTrap::~DiamondTrap()
 	std::cout << "DiamondTrap destructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap( const DiamondTrap& other )
+DiamondTrap::DiamondTrap( const DiamondTrap& other ) : ClapTrap( other ), ScavTrap( other ), FragTrap( other )
 {
-	std::cout << "DiamondTrap constructor copie called" << std::endl;
+	std::cout << "DiamondTrap copie constructor called" << std::endl;
 	*this = other;
 }
 
-DiamondTrap&	operator=( const DiamondTrap& other )
+DiamondTrap&	DiamondTrap::operator=( const DiamondTrap& other )
 {
 	this->name = other.name;
 	this->hitPoints = other.hitPoints;
@@ -44,10 +45,11 @@ DiamondTrap&	operator=( const DiamondTrap& other )
 
 void	DiamondTrap::attack( const std::string target )
 {
-	ScavTrap::attack( target );
+	this->ScavTrap::attack( target );
 }
 
 void	DiamondTrap::whoAmI()
 {
-	
+	std::cout << "\nwhoAmI: \n" << "DiamondTrap name: " << this->name << std::endl;
+	std::cout << "ClapTrap name: " << ClapTrap::name << std::endl;
 }

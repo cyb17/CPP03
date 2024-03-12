@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:47:50 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/12 10:51:10 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/12 16:35:20 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap destructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap( const ScavTrap& other ) : ClapTrap( other.name )
+ScavTrap::ScavTrap( const ScavTrap& other ) : ClapTrap( other )
 {
-	std::cout << "ScavTrap constructor copie called" << std::endl;
+	std::cout << "ScavTrap copie constructor called" << std::endl;
 	*this = other;
 }
 

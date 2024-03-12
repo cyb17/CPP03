@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:47:16 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/12 10:15:32 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/12 16:37:36 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ FragTrap::~FragTrap()
 	std::cout << "FragTrap destructor called" << std::endl;
 }
 
-FragTrap::FragTrap( const FragTrap& other ) : ClapTrap( other.name )
+FragTrap::FragTrap( const FragTrap& other ) : ClapTrap( other )
 {
-	std::cout << "FragTrap constructor copie called" << std::endl;
+	std::cout << "FragTrap copie constructor called" << std::endl;
 	*this = other;
 }
 

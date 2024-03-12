@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 10:21:54 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/11 18:55:52 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/12 16:35:45 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap( const ClapTrap& other )
 {
-	std::cout << "ClapTrap constructor copie called" << std::endl;
+	std::cout << "ClapTrap copie constructor called" << std::endl;
 	*this = other;
 }
 

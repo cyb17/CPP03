@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:20:33 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/12 11:37:04 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/12 15:43:06 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "FragTrap.hpp"
 #include <string>
 
-class	DiamondTrap : public virtual ScavTrap, public virtual FragTrap
+class	DiamondTrap : public ScavTrap, public FragTrap
 {
 	private:
 		std::string	name;
