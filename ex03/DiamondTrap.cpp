@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:32:05 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/12 19:20:41 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/18 10:56:07 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 DiamondTrap::DiamondTrap( std::string nm ) : ClapTrap( nm + "_clap_name" ), ScavTrap( nm ), FragTrap( nm )
 {
-	std::cout << "DiamondTrap constructor called" << std::endl;
+	std::cout << "\e[34m" << "DiamondTrap constructor called" << "\e[0m" << std::endl;
 
 	this->name = ClapTrap::name;
 	this->FragTrap::hitPoints = 100;
@@ -25,12 +25,12 @@ DiamondTrap::DiamondTrap( std::string nm ) : ClapTrap( nm + "_clap_name" ), Scav
 
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "DiamondTrap destructor called" << std::endl;
+	std::cout << "\e[34m" << "DiamondTrap destructor called" << "\e[0m" << std::endl;
 }
 
 DiamondTrap::DiamondTrap( const DiamondTrap& other ) : ClapTrap( other ), ScavTrap( other ), FragTrap( other )
 {
-	std::cout << "DiamondTrap copie constructor called" << std::endl;
+	std::cout << "\e[34m" << "DiamondTrap copie constructor called" << "\e[0m" << std::endl;
 	*this = other;
 }
 
@@ -53,6 +53,6 @@ void	DiamondTrap::attack( const std::string target )
 
 void	DiamondTrap::whoAmI()
 {
-	std::cout << "\nwhoAmI: \n" << "DiamondTrap name: " << this->name << std::endl;
-	std::cout << "ClapTrap name: " << ClapTrap::name << std::endl;
+	std::cout << "\e[93m" << "\nwhoAmI: \n" << "DiamondTrap name: " << this->name << "\e[0m" << std::endl;
+	std::cout << "\e[93m" << "ClapTrap name: " << ClapTrap::name << "\e[0m" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:47:16 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/12 19:19:38 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/18 10:49:36 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ FragTrap::FragTrap( std::string nm ) : ClapTrap( nm )
 	this->hitPoints = 100;
 	this->energyPoints = 100;
 	this->attackDamage = 30;
-	std::cout << "FragTrap constructor called" << std::endl;
+	std::cout << "\e[34m" << "FragTrap constructor called" << "\e[0m" << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap destructor called" << std::endl;
+	std::cout << "\e[34m" << "FragTrap destructor called" << "\e[0m" << std::endl;
 }
 
 FragTrap::FragTrap( const FragTrap& other ) : ClapTrap( other )
 {
-	std::cout << "FragTrap copie constructor called" << std::endl;
+	std::cout << "\e[34m" << "FragTrap copie constructor called" << "\e[0m" << std::endl;
 	*this = other;
 }
 
@@ -46,5 +46,5 @@ FragTrap&	FragTrap::operator=( const FragTrap& other)
 
 void	FragTrap::highFivesGuys( void )
 {
-	std::cout << this->name << " Asked: Give me five !" << std::endl;
+	std::cout << "\e[35;1m" << this->name << " Asked: Give me five !" << "\e[0m" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:47:50 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/12 19:19:47 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/18 10:44:30 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ ScavTrap::ScavTrap( std::string nm ) : ClapTrap( nm )
 	hitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 20;
-	std::cout << "ScavTrap constructor called" << std::endl;
+	std::cout << "\e[34m" << "ScavTrap constructor called" << "\e[0m" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap destructor called" << std::endl;
+	std::cout << "\e[34m" << "ScavTrap destructor called" << "\e[0m" << std::endl;
 }
 
 ScavTrap::ScavTrap( const ScavTrap& other ) : ClapTrap( other )
 {
-	std::cout << "ScavTrap copie constructor called" << std::endl;
+	std::cout << "\e[34m" << "ScavTrap copie constructor called" << "\e[0m" << std::endl;
 	*this = other;
 }
 
@@ -47,16 +47,15 @@ ScavTrap&	ScavTrap::operator=( const ScavTrap& other)
 void	ScavTrap::attack( const std::string& target )
 {
 	if (this->hitPoints == 0 || this->energyPoints == 0)
-		std::cout << this->name << " is not alive or not have enough energy to attack ." << std::endl;
+		std::cout << "\e[91m" << this->name << " is not alive or not have enough energy to attack ." << "\e[0m" << std::endl;
 	else
 	{ 
-		std::cout << "ScavTrap " << this->name << " attacks " << target;
-		std::cout << ", causing " << this->attackDamage << " points of damage !" << std::endl;
+		std::cout << "\e[31;1m" << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage !" << "\e[0m" << std::endl;
 		this->energyPoints--;
 	}
 }
 
 void	ScavTrap::guardGate()
 {
-	std::cout << this->name << " is now in Gate keeper mode ." << std::endl;
+	std::cout << "\e[95m" << this->name << " is now in Gate keeper mode ." << "\e[0m" << std::endl;
 }

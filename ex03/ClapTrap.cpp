@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 10:21:54 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/12 19:20:17 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/18 10:52:43 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 
 ClapTrap::ClapTrap( std::string nm ) : name( nm ), hitPoints( 10 ), energyPoints( 10 ), attackDamage( 0 )
 {
-	std::cout << "ClapTrap constructor called" << std::endl;
+	std::cout << "\e[34m" << "ClapTrap constructor called" << "\e[0m" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap destructor called" << std::endl;
+	std::cout << "\e[34m" << "ClapTrap destructor called" << "\e[0m" << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap& other )
 {
-	std::cout << "ClapTrap copie constructor called" << std::endl;
+	std::cout << "\e[34m" << "ClapTrap copie constructor called" << "\e[0m" << std::endl;
 	*this = other;
 }
 
@@ -44,11 +44,10 @@ ClapTrap& ClapTrap::operator=( const ClapTrap& other )
 void	ClapTrap::attack( const std::string& target )
 {
 	if (this->hitPoints == 0 || this->energyPoints == 0)
-		std::cout << this->name << " is not alive or not have enough energy to attack ." << std::endl;
+		std::cout << "\e[91m" << this->name << " is not alive or not have enough energy to attack ." << "\e[0m" << std::endl;
 	else
 	{ 
-		std::cout << "ClapTrap " << this->name << " attacks " << target;
-		std::cout << ", causing " << this->attackDamage << " points of damage !" << std::endl;
+		std::cout << "\e[31;1m" << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage !" << "\e[0m" << std::endl;
 		this->energyPoints--;
 	}
 }
@@ -56,10 +55,10 @@ void	ClapTrap::attack( const std::string& target )
 void	ClapTrap::takeDamage( unsigned int amount )
 {
 	if (this->hitPoints == 0)
-		std::cout << this->name << " is already dead ." << std::endl;
+		std::cout << "\e[91m" << this->name << " is already dead ." << "\e[0m" << std::endl;
 	else
 	{
-		std::cout << this->name << " lost " << amount << " hit points ." << std::endl;
+		std::cout << "\e[31;1m" << this->name << " lost " << amount << " hit points ." << "\e[0m" << std::endl;
 		this->hitPoints -= amount;
 	}
 }
@@ -67,12 +66,12 @@ void	ClapTrap::takeDamage( unsigned int amount )
 void	ClapTrap::beRepaired( unsigned int amount )
 {
 	if (this->hitPoints == 0)
-		std::cout << "To late to be repaired " << this->name << " is already dead ." << std::endl;
+		std::cout << "\e[91m" << "To late to be repaired " << this->name << " is already dead ." << "\e[0m" << std::endl;
 	else if (this->energyPoints == 0)
-		std::cout << "There are not enough energy points to repaire " << this->name << std::endl;
+		std::cout << "\e[91m" << "There are not enough energy points to repaire " << this->name << "\e[0m" << std::endl;
 	else
 	{
-		std::cout << this->name << " is repaired, and get " << amount << " hit points back ." << std::endl;
+		std::cout << "\e[32;1m" << this->name << " is repaired, and get " << amount << " hit points back ." << "\e[0m" << std::endl;
 		this->hitPoints += amount;
 		this->energyPoints--;
 	}
@@ -86,9 +85,9 @@ unsigned int	ClapTrap::getAttackDamage()
 void	ClapTrap::printTrapInfo()
 {
 	std::cout << "\n";
-	std::cout << "Name : " << this->name << std::endl;
-	std::cout << "Hit points : " << this->hitPoints << std::endl;
-	std::cout << "Energy points : " << this->energyPoints << std::endl;
-	std::cout << "Attack damage : " << this->attackDamage << std::endl;
+	std::cout << "\e[36m" << "Name : " << this->name << "\e[0m" << std::endl;
+	std::cout << "\e[36m" << "Hit points : " << this->hitPoints << "\e[0m" << std::endl;
+	std::cout << "\e[36m" << "Energy points : " << this->energyPoints << "\e[0m" << std::endl;
+	std::cout << "\e[36m" << "Attack damage : " << this->attackDamage << "\e[0m" << std::endl;
 	std::cout << "\n";
 }
