@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:47:50 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/18 10:52:03 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/18 13:00:52 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ScavTrap::attack( const std::string& target )
 		std::cout << "\e[91m" << this->name << " is not alive or not have enough energy to attack ." << "\e[0m" << std::endl;
 	else
 	{ 
-		std::cout << "\e[32;1m" << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage !" << "\e[0m" << std::endl;
+		std::cout << "\e[31;1m" << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage !" << "\e[0m" << std::endl;
 		this->energyPoints--;
 	}
 }

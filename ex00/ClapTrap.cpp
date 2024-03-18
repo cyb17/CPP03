@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 10:21:54 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/18 10:51:59 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/18 13:05:48 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ClapTrap::attack( const std::string& target )
 		std::cout << "\e[91m" << this->name << " is not alive or not have enough energy to attack ." << "\e[0m" << std::endl;
 	else
 	{ 
-		std::cout << "\e[33;1m" << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage !" << "\e[0m" << std::endl;
+		std::cout << "\e[31;1m" << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage !" << "\e[0m" << std::endl;
 		this->energyPoints--;
 	}
 }
@@ -58,8 +58,11 @@ void	ClapTrap::takeDamage( unsigned int amount )
 		std::cout << "\e[91m" << this->name << " is already dead ." << "\e[0m" << std::endl;
 	else
 	{
-		std::cout << "\e[33;1m" << this->name << " lost " << amount << " hit points ." << "\e[0m" << std::endl;
-		this->hitPoints -= amount;
+		std::cout << "\e[31;1m" << this->name << " lost " << amount << " hit points ." << "\e[0m" << std::endl;
+		if (this->hitPoints > amount)
+			this->hitPoints -= amount;
+		else
+			this->hitPoints = 0;
 	}
 }
 

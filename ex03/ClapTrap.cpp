@@ -6,7 +6,7 @@
 /*   By: yachen <yachen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 10:21:54 by yachen            #+#    #+#             */
-/*   Updated: 2024/03/18 10:52:43 by yachen           ###   ########.fr       */
+/*   Updated: 2024/03/18 13:05:48 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,10 @@ void	ClapTrap::takeDamage( unsigned int amount )
 	else
 	{
 		std::cout << "\e[31;1m" << this->name << " lost " << amount << " hit points ." << "\e[0m" << std::endl;
-		this->hitPoints -= amount;
+		if (this->hitPoints > amount)
+			this->hitPoints -= amount;
+		else
+			this->hitPoints = 0;
 	}
 }
 

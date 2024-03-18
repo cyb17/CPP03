@@ -6,7 +6,7 @@
 #    By: yachen <yachen@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 14:21:49 by yachen            #+#    #+#              #
-#    Updated: 2024/03/12 15:00:30 by yachen           ###   ########.fr        #
+#    Updated: 2024/03/18 13:13:31 by yachen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ SRC = main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp DiamondTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
+DEPS = $(OBJ:.o=.d)
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -30,23 +32,25 @@ $(NAME): $(OBJ)
 		@echo "\e[32m===================================\n\e[0m"
 
 %.o: %.cpp
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -MMD -c $< -o $@
 
 clean:
 	@echo "\e[32m\n====================="
 	@echo "\e[32mCleanin DiamondTrap----"
-	@rm -rf $(OBJ)
+	@rm -rf $(OBJ) $(DEPS)
 	@echo "\e[32m--- DiamondTrap Cleaned"
 	@echo "\e[32m=====================\n\e[0m"
 
 fclean:
 	@echo "\e[32m\n====================="
 	@echo "\e[32mCleanin DiamondTrap----"
-	@rm -rf $(OBJ)
+	@rm -rf $(OBJ) $(DEPS)
 	@echo "\e[32m--- DiamondTrap Cleaned"
 	@rm -rf $(NAME)
 	@echo "\e[32m=====================\n\e[0m"
 
 re: fclean all
+
+-include $(DEPS)
 
 .PHONY: clean fclean all re bonus
